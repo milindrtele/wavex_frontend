@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AudioTimeline from "./components/AudioTimeline";
 import VideoTimeline from "./components/VideoTimeline";
 import VideoPreview from "./components/VideoPreview";
@@ -7,13 +7,13 @@ import TextContainer from "./components/TextContainer";
 const initialAudioClips = [
   {
     id: "1",
-    src: "/audios/ATMOSPHERE.mp3",
+    src: "/audios/embrace-364091.mp3",
     startTime: undefined,
     endTime: undefined,
   },
   {
     id: "2",
-    src: "/audios/SANDEEP.mp3",
+    src: "/audios/history-historical-background-music-371414.mp3",
     startTime: undefined,
     endTime: undefined,
   },
@@ -50,23 +50,16 @@ const initialClips = [
     startTime: undefined,
     endTime: undefined,
   },
-  {
-    id: "6",
-    src: "/videos/clip5.mp4",
-    startTime: undefined,
-    endTime: undefined,
-  },
-  {
-    id: "7",
-    src: "/videos/clip5.mp4",
-    startTime: undefined,
-    endTime: undefined,
-  },
 ];
 
 function App() {
   const [clips, setClips] = useState(initialClips);
   const [audioClips, setAudioClips] = useState(initialAudioClips);
+
+  useEffect(() => {
+    console.log(clips);
+    console.log(audioClips);
+  }, [clips, audioClips]);
 
   return (
     <div className="p-4 w-[100vw] flex flex-col h-[100vh]">

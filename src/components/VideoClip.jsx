@@ -96,6 +96,7 @@ const VideoClip = ({ clip, onTrimChange }) => {
       <video
         ref={videoRef}
         src={clip.src}
+        preload="metadata"
         width="100%"
         className="h-full object-cover pointer-events-none"
         onLoadedMetadata={handleLoadedMetadata}
