@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect, useMemo } from "react";
 import VideoExport from "./videoExporter";
+import Ffmpeg from "./ffmpeg";
 
 const VideoPreview = ({ clips, audioClips }) => {
   const videoRef = useRef(null);
@@ -220,7 +221,8 @@ const VideoPreview = ({ clips, audioClips }) => {
             {formatTime(totalDuration)}
           </span>
         </div>
-        <VideoExport clips={clips} audioClips={audioClips} />
+        <Ffmpeg />
+        {/* <VideoExport clips={clips} audioClips={audioClips} /> */}
       </div>
     </div>
   );
