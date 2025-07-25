@@ -87,7 +87,7 @@ const VideoClip = ({ clip, onTrimChange }) => {
   return (
     <div
       ref={containerRef}
-      className="relative h-20 border rounded shadow-md bg-white select-none"
+      className="relative h-15 border rounded shadow-md bg-white select-none"
       style={{
         width: `${currentWidth}px`,
         maxWidth: `${maxWidth}px`,

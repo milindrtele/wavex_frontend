@@ -82,7 +82,7 @@ const AudioClip = ({ clip, onTrimChange }) => {
 
   return (
     <div
-      className="relative h-16 border rounded shadow-md bg-slate-100 select-none"
+      className="relative h-12 border rounded shadow-md bg-slate-100 select-none"
       style={{
         width: `${currentWidth}px`,
         maxWidth: `${maxWidth}px`,
