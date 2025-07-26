@@ -48,7 +48,7 @@ const VideoTimeline = ({ clips, setClips }) => {
         items={clips.map((clip) => clip.id)}
         strategy={horizontalListSortingStrategy}
       >
-        <div className="inset-x-5 bottom-5 flex flex-row gap-4 overflow-x-auto p-4 border border-gray-300 rounded-md">
+        <div className="h-25 inset-x-5 bottom-5 flex flex-row gap-4 overflow-x-auto p-4 border border-gray-300 rounded-md">
           {clips.map((clip) => (
             <SortableVideo
               key={clip.id}

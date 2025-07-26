@@ -221,7 +221,7 @@ const VideoPreview = ({ clips, audioClips }) => {
             {formatTime(totalDuration)}
           </span>
         </div>
-        <Ffmpeg />
+        <Ffmpeg clips={clips} audioClips={audioClips} />
         {/* <VideoExport clips={clips} audioClips={audioClips} /> */}
       </div>
     </div>

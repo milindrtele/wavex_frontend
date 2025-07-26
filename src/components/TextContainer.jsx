@@ -42,7 +42,7 @@ const TextContainer = () => {
           type="button"
           className="w-full sm:w-auto px-6 py-3 bg-purple-700 text-white font-semibold rounded-lg shadow-md hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 transition-all duration-200"
         >
-          Generate Video
+          Generate Scenes
         </button>
       </div>
     </div>
