@@ -15,9 +15,8 @@ const Exporter = ({ clips, audioClips }) => {
     const baseURL = "https://unpkg.com/@ffmpeg/core@0.12.10/dist/esm";
     const ffmpeg = ffmpegRef.current;
     ffmpeg.on("progress", ({ progress, time }) => {
-      messageRef.current.innerHTML = `${(progress * 100).toFixed(2)}% (time: ${(
-        time / 1e6
-      ).toFixed(2)}s)`;
+      //${(progress * 100).toFixed(2)}%
+      messageRef.current.innerHTML = `${(time / 1e6).toFixed(2)} sec exported`;
     });
     await ffmpeg.load({
       coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, "text/javascript"),
@@ -136,14 +135,14 @@ const Exporter = ({ clips, audioClips }) => {
     //   files.map((f) => f.name)
     // );
 
-    const trimmedData = await ffmpeg.readFile(`video_combined.mp4`);
-    const videoBlob = new Blob([trimmedData.buffer], { type: "video/mp4" });
-    const videoUrl = URL.createObjectURL(videoBlob);
+    // const trimmedData = await ffmpeg.readFile(`video_combined.mp4`);
+    // const videoBlob = new Blob([trimmedData.buffer], { type: "video/mp4" });
+    // const videoUrl = URL.createObjectURL(videoBlob);
 
-    const ab = document.createElement("a");
-    ab.href = videoUrl;
-    ab.download = `video_combined.mp4`;
-    ab.click(); // Auto-trigger download
+    // const ab = document.createElement("a");
+    // ab.href = videoUrl;
+    // ab.download = `video_combined.mp4`;
+    // ab.click(); // Auto-trigger download
 
     // Step 4: Concatenate audio tracks (optional)
     const audioInputs = audioClips.flatMap((_, i) => [

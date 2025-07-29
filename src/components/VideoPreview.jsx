@@ -196,30 +196,32 @@ const VideoPreview = ({ clips, audioClips }) => {
       )}
 
       {currentClip ? (
-        <video ref={videoRef} src={currentClip.src} autoPlay width="800" />
+        <video ref={videoRef} src={currentClip.src} autoPlay width="600" />
       ) : (
         <p>No clip</p>
       )}
 
       {/* 🎯 Controls container */}
       <div className="mt-4 flex flex-col items-center justify-center space-y-3 w-full max-w-3xl mx-auto">
-        <button
-          onClick={handlePlayPause}
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-        >
-          {isPlaying ? "Pause" : "Play"}
-        </button>
+        <div className="flex flex-row items-center justify-between w-full mb-2">
+          <button
+            onClick={handlePlayPause}
+            className="mr-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+          >
+            {isPlaying ? "Pause" : "Play"}
+          </button>
 
-        <div className="w-full flex items-center space-x-2">
-          <div className="flex-1 h-2 bg-gray-300 rounded relative">
-            <div
-              className="h-2 bg-blue-600 rounded absolute top-0 left-0 transition-all"
-              style={{ width: `${progress}%` }}
-            />
+          <div className="w-full flex items-center space-x-2">
+            <div className="flex-1 h-2 bg-gray-300 rounded relative">
+              <div
+                className="h-2 bg-blue-600 rounded absolute top-0 left-0 transition-all"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+            <span className="text-sm whitespace-nowrap">
+              {formatTime(totalDuration)}
+            </span>
           </div>
-          <span className="text-sm whitespace-nowrap">
-            {formatTime(totalDuration)}
-          </span>
         </div>
         <Ffmpeg clips={clips} audioClips={audioClips} />
         {/* <VideoExport clips={clips} audioClips={audioClips} /> */}
